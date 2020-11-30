@@ -6,13 +6,19 @@ import {
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Player = ({ currentSong }) => {
+const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
   // If you need to select a specific HTML tag in your JSX, use a reference! Make sure you import it though
   const audioRef = useRef(null);
 
   // Event handlers
   const playSongHandler = () => {
-    console.log(audioRef.current);
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
   };
 
   // Return your JSX
