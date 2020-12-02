@@ -8,6 +8,7 @@ import "./styles/app.scss";
 import Song from "./components/Song";
 import Player from "./components/Player";
 import Library from "./components/Library";
+import Nav from "./components/Nav";
 
 // Import Util
 import data from "./util";
@@ -15,8 +16,6 @@ import data from "./util";
 function App() {
   // If you need to select a specific HTML tag in your JSX, use a reference! Make sure you import it though
   const audioRef = useRef(null);
-
-  // Event Handlers
 
   // Functions
   const timeUpdateHandler = (event) => {
@@ -33,9 +32,11 @@ function App() {
     currentTime: 0,
     duration: 0,
   });
+  const [libraryStatus, setLibraryStatus] = useState(false);
 
   return (
     <div className="App">
+      <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
       <Song currentSong={currentSong} />
       <Player
         setIsPlaying={setIsPlaying}
@@ -43,7 +44,7 @@ function App() {
         currentSong={currentSong}
         audioRef={audioRef}
         songInfo={songInfo}
-        setSongInfo={songInfo}
+        setSongInfo={setSongInfo}
       />
       <Library
         songs={songs}
@@ -51,6 +52,7 @@ function App() {
         setCurrentSong={setCurrentSong}
         audioRef={audioRef}
         isPlaying={isPlaying}
+        libraryStatus={libraryStatus}
       />
       <audio
         onTimeUpdate={timeUpdateHandler}

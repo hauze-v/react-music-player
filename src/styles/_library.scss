@@ -9,6 +9,10 @@
   h2 {
     padding: 2rem;
   }
+  // Animation styles
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+  opacity: 0;
 }
 .library-song {
   display: flex;
@@ -49,4 +53,8 @@
 }
 .selected {
   background: rgb(165, 181, 228);
+}
+.open {
+  transform: translateX(0%);
+  opacity: 1;
 }
