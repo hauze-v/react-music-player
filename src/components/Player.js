@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -7,10 +7,13 @@ import {
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
-  // If you need to select a specific HTML tag in your JSX, use a reference! Make sure you import it though
-  const audioRef = useRef(null);
-
+const Player = ({
+  isPlaying,
+  setIsPlaying,
+  audioRef,
+  songInfo,
+  setSongInfo,
+}) => {
   // Event handlers
   const playSongHandler = () => {
     if (isPlaying) {
@@ -21,11 +24,8 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
       setIsPlaying(true);
     }
   };
-  const timeUpdateHandler = (event) => {
-    const current = event.target.currentTime;
-    const duration = event.target.duration;
-    setSongInfo({ ...songInfo, currentTime: current, duration });
-  };
+
+  // Functions
   const dragHandler = (event) => {
     audioRef.current.currentTime = event.target.value;
     setSongInfo({ ...songInfo, currentTime: event.target.value });
@@ -36,12 +36,6 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
       Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
     );
   };
-
-  // State
-  const [songInfo, setSongInfo] = useState({
-    currentTime: 0,
-    duration: 0,
-  });
 
   // Return your JSX
   return (
@@ -71,11 +65,6 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
           size="2x"
         />
       </div>
-      <audio
-        onTimeUpdate={timeUpdateHandler}
-        ref={audioRef}
-        src={currentSong.audio}
-      ></audio>
     </div>
   );
 };

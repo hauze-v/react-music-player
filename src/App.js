@@ -1,5 +1,5 @@
 //Import useState
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 // Import styles
 import "./styles/app.scss";
@@ -13,10 +13,26 @@ import Library from "./components/Library";
 import data from "./util";
 
 function App() {
+  // If you need to select a specific HTML tag in your JSX, use a reference! Make sure you import it though
+  const audioRef = useRef(null);
+
+  // Event Handlers
+
+  // Functions
+  const timeUpdateHandler = (event) => {
+    const current = event.target.currentTime;
+    const duration = event.target.duration;
+    setSongInfo({ ...songInfo, currentTime: current, duration });
+  };
+
   // State
   const [songs, setSongs] = useState(data());
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [songInfo, setSongInfo] = useState({
+    currentTime: 0,
+    duration: 0,
+  });
 
   return (
     <div className="App">
@@ -25,8 +41,22 @@ function App() {
         setIsPlaying={setIsPlaying}
         isPlaying={isPlaying}
         currentSong={currentSong}
+        audioRef={audioRef}
+        songInfo={songInfo}
+        setSongInfo={songInfo}
       />
-      <Library songs={songs} setCurrentSong={setCurrentSong} />
+      <Library
+        songs={songs}
+        setSongs={setSongs}
+        setCurrentSong={setCurrentSong}
+        audioRef={audioRef}
+        isPlaying={isPlaying}
+      />
+      <audio
+        onTimeUpdate={timeUpdateHandler}
+        ref={audioRef}
+        src={currentSong.audio}
+      ></audio>
     </div>
   );
 }
