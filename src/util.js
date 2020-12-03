@@ -1,10 +1,24 @@
 import { v4 as uuidv4 } from "uuid";
+// import aftergoldImg from "./images/aftergold_big_wild.jpg";
+// import angstImg from "./images/angst_inzo.jpg";
+// import overthinkerImg from "./images/overthinker_inzo.jpg";
+// import fairytaleImg from "./images/fairy_tale_ekali.jpg";
+// import griztronicsImg from "./images/griztronics.jpg";
+// import hardToSayGoodByeImg from "./images/hard_to_say_goodbye_ekali.jpg";
+// import lastToLeaveImg from "./images/last_to_leave_louis_the_child.jpg";
+// import lateNightImg from "./images/late_night_odesza.jpg";
+// import losingItImg from "./images/losing_it_fisher.jpg";
+// import magnetsImg from "./images/magnets_zeds_dead.jpg";
+// import onlyNowImg from "./images/only_now_seven_lions.jpg";
+// import rememberMeImg from "./images/remember.jpg";
+// import promisesImg from "./images/promises_nero.jpg";
+
 function chillHop() {
   return [
     {
       id: uuidv4(),
-      audio: "/src/music/Aftergold.mp3",
-      cover: "/src/images/aftergold_big_wild.jpg",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=10075",
+      cover: "/public/images/aftergold_big_wild.jpg",
       time: "03:50",
       name: "Aftergold",
       artist: "Big Wild",
@@ -13,8 +27,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Angst.mp3",
-      cover: "/src/images/angst_inzo.jpg",
+      audio: "./music/Angst.mp3",
+      // cover: { angstImg },
       time: "03:17",
       name: "Angst",
       artist: "Inzo",
@@ -23,8 +37,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Overthinker.mp3",
-      cover: "/src/images/overthinker_inzo.jpg",
+      audio: "./music/Overthinker.mp3",
+      // cover: { overthinkerImg },
       time: "04:34",
       name: "Overthinker",
       artist: "Inzo",
@@ -33,8 +47,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Fairy_Tale.mp3",
-      cover: "/src/images/fairy_tale_ekali.jpg",
+      audio: "./music/Fairy_Tale.mp3",
+      // cover: { fairytaleImg },
       time: "04:16",
       name: "Fairly Tale",
       artist: "Ekali",
@@ -43,8 +57,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Griztronics.mp3",
-      cover: "/src/images/griztronics.jpg",
+      audio: "./music/Griztronics.mp3",
+      // cover: { griztronicsImg },
       time: "03:19",
       name: "Griztronics",
       artist: "Subtronics",
@@ -53,8 +67,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Hard_to_say_goodbye.mp3",
-      cover: "/src/images/hard_to_say_goodbye_ekali.jpg",
+      audio: "./music/Hard_to_say_goodbye.mp3",
+      // cover: { hardToSayGoodByeImg },
       time: "03:17",
       name: "Hard to Say Goodbye",
       artist: "Ekali",
@@ -63,8 +77,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Last_to_leave.mp3",
-      cover: "/src/images/last_to_leave_louis_the_child.jpg",
+      audio: "./music/Last_to_leave.mp3",
+      // cover: { lastToLeaveImg },
       time: "03:00",
       name: "Last to Leave",
       artist: "Louis The Child",
@@ -73,8 +87,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Late_night.mp3",
-      cover: "/src/images/late_night_odesza.jpg",
+      audio: "./music/Late_night.mp3",
+      // cover: { lateNightImg },
       time: "03:48",
       name: "Late Night",
       artist: "Odesza",
@@ -83,8 +97,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Losing_it.mp3",
-      cover: "/src/images/losing_it_fisher.jpg",
+      audio: "./music/Losing_it.mp3",
+      // cover: { losingItImg },
       time: "06:41",
       name: "Losing It",
       artist: "Fisher",
@@ -93,8 +107,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Magnets.mp3",
-      cover: "/src/images/magnets_zeds_dead.jpg",
+      audio: "./music/Magnets.mp3",
+      // cover: { magnetsImg },
       time: "04:19",
       name: "Magnets",
       artist: "Zeds Dead",
@@ -103,8 +117,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Only_now.mp3",
-      cover: "/src/images/only_now_seven_lions.jpg",
+      audio: "./music/Only_now.mp3",
+      // cover: { onlyNowImg },
       time: "03:31",
       name: "Only Now",
       artist: "Seven Lions",
@@ -113,8 +127,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Remember.mp3",
-      cover: "/src/images/remember.jpg",
+      audio: "./music/Remember.mp3",
+      // cover: { rememberMeImg },
       time: "05:14",
       name: "Remember",
       artist: "Seven Lions",
@@ -123,8 +137,8 @@ function chillHop() {
     },
     {
       id: uuidv4(),
-      audio: "/src/music/Promises.mp3",
-      cover: "/src/images/promises_nero.jpg",
+      audio: "./music/Promises.mp3",
+      // cover: { promisesImg },
       time: "04:28",
       name: "Promises",
       artist: "Skrillex",
