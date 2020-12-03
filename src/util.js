@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-// import aftergoldImg from "./images/aftergold_big_wild.jpg";
+import aftergoldImg from "./images/aftergold_big_wild.jpg";
 // import angstImg from "./images/angst_inzo.jpg";
 // import overthinkerImg from "./images/overthinker_inzo.jpg";
 // import fairytaleImg from "./images/fairy_tale_ekali.jpg";
@@ -17,8 +17,8 @@ function chillHop() {
   return [
     {
       id: uuidv4(),
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=10075",
-      cover: "/public/images/aftergold_big_wild.jpg",
+      audio: "./music/Aftergold.mp3",
+      cover: { aftergoldImg },
       time: "03:50",
       name: "Aftergold",
       artist: "Big Wild",
@@ -28,7 +28,8 @@ function chillHop() {
     {
       id: uuidv4(),
       audio: "./music/Angst.mp3",
-      // cover: { angstImg },
+      cover:
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftrillvo.files.wordpress.com%2F2019%2F11%2Finzo-angst.jpg&f=1&nofb=1",
       time: "03:17",
       name: "Angst",
       artist: "Inzo",
@@ -38,7 +39,8 @@ function chillHop() {
     {
       id: uuidv4(),
       audio: "./music/Overthinker.mp3",
-      // cover: { overthinkerImg },
+      cover:
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thissongslaps.com%2Fwp-content%2Fuploads%2F2018%2F08%2Finzo-new-original-overthinker-thissongslaps.jpg&f=1&nofb=1",
       time: "04:34",
       name: "Overthinker",
       artist: "Inzo",

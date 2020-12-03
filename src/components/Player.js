@@ -6,6 +6,7 @@ import {
   faAngleLeft,
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
+import aftergold from "../music/Aftergold.mp3";
 
 const Player = ({
   isPlaying,
