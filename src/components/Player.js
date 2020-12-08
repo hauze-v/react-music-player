@@ -6,7 +6,6 @@ import {
   faAngleLeft,
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
-import aftergold from "../music/Aftergold.mp3";
 
 const Player = ({
   isPlaying,
@@ -14,6 +13,9 @@ const Player = ({
   audioRef,
   songInfo,
   setSongInfo,
+  setCurrentSong,
+  currentSong,
+  songs,
 }) => {
   // Event handlers
   const playSongHandler = () => {
@@ -38,6 +40,15 @@ const Player = ({
     );
   };
 
+  const skipTrackHandler = (direction) => {
+    if (typeof direction !== "number") return;
+
+    let index = songs.indexOf(currentSong) + direction;
+    if (index < 0) index = songs.length - 1;
+    if (index > songs.length - 1) index = 0;
+    setCurrentSong(songs[index]);
+  };
+
   // Return your JSX
   return (
     <div className="player">
@@ -53,7 +64,12 @@ const Player = ({
         <p>{formatTime(songInfo.duration)}</p>
       </div>
       <div className="play-control">
-        <FontAwesomeIcon className="skip-back" icon={faAngleLeft} size="2x" />
+        <FontAwesomeIcon
+          onClick={() => skipTrackHandler(-1)}
+          className="skip-back"
+          icon={faAngleLeft}
+          size="2x"
+        />
         <FontAwesomeIcon
           onClick={playSongHandler}
           className="play"
@@ -61,6 +77,7 @@ const Player = ({
           size="2x"
         />
         <FontAwesomeIcon
+          onClick={() => skipTrackHandler(1)}
           className="skip-forward"
           icon={faAngleRight}
           size="2x"
