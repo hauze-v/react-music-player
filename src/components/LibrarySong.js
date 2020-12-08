@@ -1,4 +1,5 @@
 import React from "react";
+import { playAudio } from "../util";
 
 const LibrarySong = ({
   song,
@@ -29,16 +30,7 @@ const LibrarySong = ({
     });
 
     setSongs(newSongs);
-
-    /* Setup a promise here that continues to check if the audio is loaded. If we try to play immediately, it won't work */
-    if (isPlaying) {
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.then((audio) => {
-          audioRef.current.play();
-        });
-      }
-    }
+    playAudio(isPlaying, audioRef);
   };
 
   // Return your JSX

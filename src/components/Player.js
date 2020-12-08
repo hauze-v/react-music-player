@@ -1,5 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { playAudio } from "../util";
 import {
   faPlay,
   faPause,
@@ -47,6 +48,8 @@ const Player = ({
     if (index < 0) index = songs.length - 1;
     if (index > songs.length - 1) index = 0;
     setCurrentSong(songs[index]);
+
+    playAudio(isPlaying, audioRef);
   };
 
   // Return your JSX
@@ -61,7 +64,7 @@ const Player = ({
           onChange={dragHandler}
           type="range"
         />
-        <p>{formatTime(songInfo.duration)}</p>
+        <p>{songInfo.duration ? formatTime(songInfo.duration) : "0:00"}</p>
       </div>
       <div className="play-control">
         <FontAwesomeIcon
