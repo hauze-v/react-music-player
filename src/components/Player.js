@@ -52,18 +52,34 @@ const Player = ({
     playAudio(isPlaying, audioRef);
   };
 
+  // Get the animation percentage used for animating the slider
+  const animationPercentage = (songInfo.currentTime / songInfo.duration) * 100;
+
+  // Add styles
+  const style = {
+    transform: `translateX(${animationPercentage}%)`,
+  };
+
   // Return your JSX
   return (
     <div className="player">
       <div className="time-control">
         <p>{formatTime(songInfo.currentTime)}</p>
-        <input
-          min={0}
-          max={songInfo.duration || 0}
-          value={songInfo.currentTime}
-          onChange={dragHandler}
-          type="range"
-        />
+        <div
+          className="track"
+          style={{
+            background: `linear-gradient(to right, ${currentSong.color[0]}, ${currentSong.color[1]})`,
+          }}
+        >
+          <input
+            min={0}
+            max={songInfo.duration || 0}
+            value={songInfo.currentTime}
+            onChange={dragHandler}
+            type="range"
+          />
+          <div className="animate-track" style={style}></div>
+        </div>
         <p>{songInfo.duration ? formatTime(songInfo.duration) : "0:00"}</p>
       </div>
       <div className="play-control">
