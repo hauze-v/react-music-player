@@ -1,5 +1,4 @@
 import React from "react";
-import aftergold from "../images/aftergold_big_wild.jpg";
 
 const Song = ({ currentSong }) => {
   // Return your JSX

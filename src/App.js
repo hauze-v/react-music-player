@@ -24,6 +24,14 @@ function App() {
     setSongInfo({ ...songInfo, currentTime: current, duration });
   };
 
+  const songEndHandler = async () => {
+    let index = songs.indexOf(currentSong) + 1;
+    if (index < 0) index = songs.length - 1;
+    if (index > songs.length - 1) index = 0;
+    await setCurrentSong(songs[index]);
+    if (isPlaying) audioRef.current.play();
+  };
+
   // State
   const [songs, setSongs] = useState(data());
   const [currentSong, setCurrentSong] = useState(songs[0]);
@@ -59,6 +67,7 @@ function App() {
       />
       <audio
         onTimeUpdate={timeUpdateHandler}
+        onEnded={songEndHandler}
         ref={audioRef}
         src={currentSong.audio}
       ></audio>

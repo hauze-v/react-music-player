@@ -1,6 +1,5 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { playAudio } from "../util";
 import {
   faPlay,
   faPause,
@@ -41,15 +40,15 @@ const Player = ({
     );
   };
 
-  const skipTrackHandler = (direction) => {
+  const skipTrackHandler = async (direction) => {
     if (typeof direction !== "number") return;
 
     let index = songs.indexOf(currentSong) + direction;
     if (index < 0) index = songs.length - 1;
     if (index > songs.length - 1) index = 0;
-    setCurrentSong(songs[index]);
+    await setCurrentSong(songs[index]);
 
-    playAudio(isPlaying, audioRef);
+    if (isPlaying) audioRef.current.play();
   };
 
   // Get the animation percentage used for animating the slider

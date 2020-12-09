@@ -1,5 +1,4 @@
 import React from "react";
-import { playAudio } from "../util";
 
 const LibrarySong = ({
   song,
@@ -10,8 +9,8 @@ const LibrarySong = ({
   isPlaying,
   currentSong,
 }) => {
-  const songSelectHandler = () => {
-    setCurrentSong(song);
+  const songSelectHandler = async () => {
+    await setCurrentSong(song);
 
     /* Map over the array of songs and when the id's match (currentlySelected) change active to true and the others to false
        Then update the state of "songs" to the new array */
@@ -30,7 +29,7 @@ const LibrarySong = ({
     });
 
     setSongs(newSongs);
-    playAudio(isPlaying, audioRef);
+    if (isPlaying) audioRef.current.play();
   };
 
   // Return your JSX
