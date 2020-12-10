@@ -12,7 +12,6 @@ import Nav from "./components/Nav";
 
 // Import Data
 import data from "./data";
-import { library } from "@fortawesome/fontawesome-svg-core";
 
 function App() {
   // If you need to select a specific HTML tag in your JSX, use a reference! Make sure you import it though
