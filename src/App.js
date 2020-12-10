@@ -12,6 +12,7 @@ import Nav from "./components/Nav";
 
 // Import Data
 import data from "./data";
+import { library } from "@fortawesome/fontawesome-svg-core";
 
 function App() {
   // If you need to select a specific HTML tag in your JSX, use a reference! Make sure you import it though
@@ -36,14 +37,14 @@ function App() {
   const [songs, setSongs] = useState(data());
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [libraryStatus, setLibraryStatus] = useState(false);
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
   });
-  const [libraryStatus, setLibraryStatus] = useState(false);
 
   return (
-    <div className="App">
+    <div className={`App ${libraryStatus ? "library-active" : ""}`}>
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
       <Song currentSong={currentSong} />
       <Player
