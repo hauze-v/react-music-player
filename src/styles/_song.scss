@@ -7,6 +7,8 @@
   img {
     width: 20%;
     border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: rotate(-90deg);
   }
   h2 {
     padding: 3rem 1rem 1rem 1rem;
@@ -14,6 +16,22 @@
   h3 {
     font-size: 1rem;
   }
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation-name: spinning;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  animation-timing-function: linear;
 }
 
 @media screen and (max-width: 768px) {
