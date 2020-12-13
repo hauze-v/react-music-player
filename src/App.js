@@ -37,6 +37,7 @@ function App() {
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [libraryStatus, setLibraryStatus] = useState(false);
+  const [songIndex, setSongIndex] = useState(0);
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
@@ -55,6 +56,8 @@ function App() {
         songInfo={songInfo}
         setSongInfo={setSongInfo}
         songs={songs}
+        songIndex={songIndex}
+        setSongIndex={setSongIndex}
       />
       <Library
         songs={songs}

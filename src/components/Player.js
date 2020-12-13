@@ -16,6 +16,8 @@ const Player = ({
   setCurrentSong,
   currentSong,
   songs,
+  songIndex,
+  setSongIndex,
 }) => {
   // Event handlers
   const playSongHandler = () => {
@@ -43,9 +45,18 @@ const Player = ({
   const skipTrackHandler = async (direction) => {
     if (typeof direction !== "number") return;
 
+    console.log(
+      `Inside Player.js, skipTackHandler function. PRE-Index = ${songs.indexOf(
+        currentSong
+      )}`
+    );
     let index = songs.indexOf(currentSong) + direction;
     if (index < 0) index = songs.length - 1;
     if (index > songs.length - 1) index = 0;
+    setSongIndex(index);
+    console.log(
+      `Inside Player.js, skipTrackHandler function. Index = ${index}`
+    );
     await setCurrentSong(songs[index]);
 
     if (isPlaying) audioRef.current.play();
