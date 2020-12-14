@@ -1,11 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
+import aftergoldImg from "./images/aftergold_big_wild.jpg";
 
 function chillHop() {
   return [
     {
       id: uuidv4(),
       audio: `${process.env.PUBLIC_URL}/music/Aftergold.mp3`,
-      cover: `${process.env.PUBLIC_URL}/images/aftergold_big_wild.jpg`,
+      cover: aftergoldImg,
       time: "03:50",
       name: "Aftergold",
       artist: "Big Wild",
