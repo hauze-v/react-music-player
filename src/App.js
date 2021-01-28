@@ -1,15 +1,12 @@
 //Import useState
 import { useState, useRef } from "react";
-
 // Import styles
 import "./styles/app.scss";
-
 // Adding components
 import Song from "./components/Song";
 import Player from "./components/Player";
 import Library from "./components/Library";
 import Nav from "./components/Nav";
-
 // Import Data
 import data from "./data";
 
