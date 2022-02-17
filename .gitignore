@@ -8,7 +8,7 @@
 # testing
 /coverage
 
-# production
+# production packages
 /build
 
 # misc
@@ -23,4 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintcache
+
+# kubernetes build package
 /k8s
