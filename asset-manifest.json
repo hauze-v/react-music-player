@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-music-player/static/css/main.1524a5d7.chunk.css",
+    "main.js": "/react-music-player/static/js/main.aef2fe30.chunk.js",
+    "main.js.map": "/react-music-player/static/js/main.aef2fe30.chunk.js.map",
+    "runtime-main.js": "/react-music-player/static/js/runtime-main.ee980f97.js",
+    "runtime-main.js.map": "/react-music-player/static/js/runtime-main.ee980f97.js.map",
+    "static/js/2.4ead00dd.chunk.js": "/react-music-player/static/js/2.4ead00dd.chunk.js",
+    "static/js/2.4ead00dd.chunk.js.map": "/react-music-player/static/js/2.4ead00dd.chunk.js.map",
+    "static/js/3.86774b8e.chunk.js": "/react-music-player/static/js/3.86774b8e.chunk.js",
+    "static/js/3.86774b8e.chunk.js.map": "/react-music-player/static/js/3.86774b8e.chunk.js.map",
+    "index.html": "/react-music-player/index.html",
+    "static/css/main.1524a5d7.chunk.css.map": "/react-music-player/static/css/main.1524a5d7.chunk.css.map",
+    "static/js/2.4ead00dd.chunk.js.LICENSE.txt": "/react-music-player/static/js/2.4ead00dd.chunk.js.LICENSE.txt",
+    "static/media/aftergold_big_wild.0e8c60cb.jpg": "/react-music-player/static/media/aftergold_big_wild.0e8c60cb.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ee980f97.js",
+    "static/js/2.4ead00dd.chunk.js",
+    "static/css/main.1524a5d7.chunk.css",
+    "static/js/main.aef2fe30.chunk.js"
+  ]
+}
